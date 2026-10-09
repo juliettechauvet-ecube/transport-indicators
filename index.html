@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transport Indicators · E-CUBE Strategy Consultants</title>
+<meta name="description" content="Indicateurs clés de la décarbonation du transport en France. Calculs E-CUBE.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="./"><img src="assets/logo.png" alt="E-CUBE"><span data-i18n="appName">Transport Indicators</span></a>
+    <nav class="tabs"><span class="tab active" data-i18n="tabEv">Véhicules électriques</span></nav>
+    <div class="topbar-right">
+      <span class="asof"><span data-i18n="asOf">Données au</span> <b id="asof">–</b></span>
+      <div class="seg lang" role="group" aria-label="Langue">
+        <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-mark">E-CUBE<br><span>Strategy<br>Consultants</span></div>
+    <div>
+      <h1><span data-i18n="heroTitle1">Transport</span><br><span data-i18n="heroTitle2">Indicators</span></h1>
+      <p class="lede" data-i18n="lede">Électrification du parc automobile : les indicateurs clés du transport bas-carbone en France. Calculs E-CUBE.</p>
+    </div>
+  </section>
+
+  <h2 class="section-h" data-i18n="kpis">Indicateurs</h2>
+  <div class="kpis" id="kpis"></div>
+
+  <h2 class="section-h" data-i18n="secEv">Électrification des ventes</h2>
+
+  <article class="card" id="card-volumes">
+    <h3 data-i18n="chartVolTitle">Immatriculations de Voitures Électriques Neuves</h3>
+    <p class="sub" data-i18n="chartVolSub">[milliers de voitures particulières neuves (M1), par année, France]</p>
+    <div class="controls">
+      <div class="ctl"><span class="ctl-l" data-i18n="ctlSeries">Motorisation</span>
+        <div class="seg" data-ctl="vol-series">
+          <button data-v="both" class="on" data-i18n="optBoth">BEV + PHEV</button><button data-v="BEV">BEV</button><button data-v="PHEV">PHEV</button>
+        </div></div>
+      <div class="ctl"><span class="ctl-l" data-i18n="ctlPeriod">Période affichée</span>
+        <div class="seg" data-ctl="vol-period">
+          <button data-v="10" data-i18n="opt10y">10 ans</button><button data-v="2010" class="on" data-i18n="optSince2010">Depuis 2010</button><button data-v="all" data-i18n="optAll">Tout</button>
+        </div></div>
+    </div>
+    <div class="legend" id="leg-volumes"></div>
+    <div class="chart" id="chart-volumes"></div>
+    <p class="note" data-i18n="noteVol"></p>
+    <p class="src" data-i18n="src">Source : analyses E-CUBE Strategy Consultants sur la base des données EAFO (Commission européenne)</p>
+  </article>
+
+  <article class="card" id="card-share">
+    <h3 data-i18n="chartShareTitle">Part des Voitures Électriques dans les Ventes</h3>
+    <p class="sub" data-i18n="chartShareSub">[% des immatriculations de voitures particulières neuves (M1), par année, France]</p>
+    <div class="controls">
+      <div class="ctl"><span class="ctl-l" data-i18n="ctlSeries">Motorisation</span>
+        <div class="seg" data-ctl="share-series">
+          <button data-v="both" class="on" data-i18n="optBoth">BEV + PHEV</button><button data-v="BEV">BEV</button><button data-v="PHEV">PHEV</button>
+        </div></div>
+      <div class="ctl"><span class="ctl-l" data-i18n="ctlPeriod">Période affichée</span>
+        <div class="seg" data-ctl="share-period">
+          <button data-v="10" data-i18n="opt10y">10 ans</button><button data-v="2010" class="on" data-i18n="optSince2010">Depuis 2010</button><button data-v="all" data-i18n="optAll">Tout</button>
+        </div></div>
+    </div>
+    <div class="legend" id="leg-share"></div>
+    <div class="chart" id="chart-share"></div>
+    <p class="note" data-i18n="noteShare"></p>
+    <p class="src" data-i18n="src">Source : analyses E-CUBE Strategy Consultants sur la base des données EAFO (Commission européenne)</p>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <b>E-CUBE Strategy Consultants</b>
+    <p id="foot-data"></p>
+  </div>
+</footer>
+
+<div class="tip" id="tip" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
